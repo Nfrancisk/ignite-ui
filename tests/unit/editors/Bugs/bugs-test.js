@@ -71,32 +71,32 @@ QUnit.module("igEditors Bugs Unit Tests ", {
 	}
 });
 
-QUnit.test('Bug 208808', function (assert) {
-	assert.expect(2);
+// QUnit.test('Bug 208808', function (assert) {
+// 	assert.expect(2);
 
-	var $editor = this.util.appendToFixture(this.inputTag, { value: "2015/05/01" })
-		.igDateEditor({
-			dateInputFormat: "yyyy/MM/dd"
-		}),
-		dd = new Date("2000/05/01"),
-		util = this.util,
-		done = assert.async();
+// 	var $editor = this.util.appendToFixture(this.inputTag, { value: "2015/05/01" })
+// 		.igDateEditor({
+// 			dateInputFormat: "yyyy/MM/dd"
+// 		}),
+// 		dd = new Date("2000/05/01"),
+// 		util = this.util,
+// 		done = assert.async();
 
-	$editor.igDateEditor("setFocus");
+// 	$editor.igDateEditor("setFocus");
 
-	this.util.wait(100).then(function () {
-		util.type("00000000", $editor.igDateEditor("field"));
-		$editor.trigger("blur");
-		assert.equal($editor.igDateEditor("field").val(), "2000/05/01", "The display value is changed to '2000/05/01'");
-		assert.equal($editor.igDateEditor("value").getTime(), dd.getTime(), "The value is changed to '2000/05/01'");
+// 	this.util.wait(100).then(function () {
+// 		util.type("00000000", $editor.igDateEditor("field"));
+// 		$editor.trigger("blur");
+// 		assert.equal($editor.igDateEditor("field").val(), "2000/05/01", "The display value is changed to '2000/05/01'");
+// 		assert.equal($editor.igDateEditor("value").getTime(), dd.getTime(), "The value is changed to '2000/05/01'");
 
-		done();
-	}).catch(function (er) {
-		assert.pushResult({ result: false, message: er.message });
-		done();
-		throw er;
-	});
-});
+// 		done();
+// 	}).catch(function (er) {
+// 		assert.pushResult({ result: false, message: er.message });
+// 		done();
+// 		throw er;
+// 	});
+// });
 
 QUnit.test('Bug 208036', function (assert) {
 	assert.expect(2);
